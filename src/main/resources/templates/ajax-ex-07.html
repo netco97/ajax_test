@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ex04</title>
+  <title>ex07</title>
   <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
-<button onclick="ex04Fn()">ex04 함수 호출</button>
+<button onclick="ex07Fn()">ex07 함수 호출</button>
 </body>
 <script>
-  const ex04Fn = () => {
+  const ex07Fn = () => {
     const val1 = "Hello SpringBoot!!";
 
     const params = {
@@ -20,14 +20,16 @@
 
     $.ajax({
       // 요청방식: post
-      // 요청주소: /ex04
+      // 요청주소: /ex07
       type: "post",
-      url: "/ex04",
+      url: "/ex07",
       // parameter 전달하기
-      data: params,
+      data: JSON.stringify(params),
+      contentType: "application/json",
       // 요청이 성공했을 때 실행되는 부분
       success: function(res) {
         console.log("성공", res);
+        console.log("param1", res.param1);
       },
       // 요청이 실패했을 때 실행되는 부분
       error: function() {
